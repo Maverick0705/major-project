@@ -45,20 +45,20 @@ pipeline{
                  sh "trivy fs . > trivyfs.txt"
              }
          }
-        //   stage("Docker Build & Push"){
-        //      steps{
-        //          script{
-        //             withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker'){   
-        //                 sh "docker build -t swiggy-clone ."
-        //                 sh "docker tag swiggy-clone iamrsk/swiggy-clone:latest "
-        //                 sh "docker push iamrsk/swiggy-clone:latest "
-        //              }
-        //          }
-        //      }
-        //  }
+          stage("Docker Build & Push"){
+             steps{
+                 script{
+                    withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker'){   
+                        sh "docker build -t swiggy-clone ."
+                        sh "docker tag swiggy-clone riteshb0705/swiggy-clone:latest "
+                        sh "docker push riteshb0705/swiggy-clone:latest "
+                     }
+                 }
+             }
+         }
          stage("TRIVY"){
              steps{
-                 sh "trivy image iamrsk/swiggy-clone:latest > trivyimage.txt" 
+                 sh "trivy image riteshb0705/swiggy-clone:latest > trivyimage.txt" 
              }
          }
         //   stage('Deploy to Kubernetes'){
