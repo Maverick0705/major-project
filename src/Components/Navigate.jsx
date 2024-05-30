@@ -11,7 +11,7 @@ function Navigate() {
                         <img width={'55px'} src="https://www.theknowhowlib.com/wp-content/uploads/2020/05/Swiggy-2.png" alt="lolll" />
                         <p style={{fontSize:"13px"}} className='mt-3'><span className='fw-bold text-decoration-underline'>Dehradun</span> Clement Town, Dehradun...</p>
                         <i style={{color:"#e78838"}} className="fa-solid fa-angle-down"></i>
-                        </div
+                        </div>
                 </Col>
                 <Col>
                         <div id='Nav-icons' className='d-flex justify-content-between align-items-center w-75 mt-3'>
