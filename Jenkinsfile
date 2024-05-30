@@ -6,7 +6,7 @@ pipeline{
          nodejs 'node16'
      }
      environment {
-         SCANNER_HOME=tool 'sonarqube-scanner'
+         SCANNER_HOME=tool 'sonar-scanner'
      }
      
      stages {
