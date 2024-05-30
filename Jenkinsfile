@@ -61,19 +61,19 @@ pipeline{
                  sh "trivy image riteshb0705/swiggy-clone:latest > trivyimage.txt" 
              }
          }
-        //   stage('Deploy to Kubernetes'){
-        //      steps{
-        //          script{
-        //              dir('Kubernetes') {
-        //                  kubeconfig(credentialsId: 'kubernetes', serverUrl: '') {
-        //                  sh 'kubectl delete --all pods'
-        //                  sh 'kubectl apply -f deployment.yml'
-        //                  sh 'kubectl apply -f service.yml'
-        //                  }   
-        //              }
-        //          }
-        //      }
-        //  }
+          stage('Deploy to Kubernetes'){
+             steps{
+                 script{
+                     dir('Kubernetes') {
+                         kubeconfig(credentialsId: 'kubernetes', serverUrl: '') {
+                         sh 'kubectl delete --all pods'
+                         sh 'kubectl apply -f deployment.yml'
+                         sh 'kubectl apply -f service.yml'
+                         }   
+                     }
+                 }
+             }
+         }
         /*
           post {
           always {
